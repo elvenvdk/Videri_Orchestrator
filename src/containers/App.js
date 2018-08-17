@@ -1,13 +1,23 @@
-import React, { Component } from 'react';
-import styles from './App.scss';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import styles from "./App.scss";
+import Login from "../components/login/Login";
+import Content from "../components/content/Content";
+import PrivateRoute from "../components/private-route/PrivateRoute";
 
 class App extends Component {
   render() {
     return (
-      <div className={styles.App}>
-        <h2>Welcome To DevStarter</h2>
-        <p>The Simple Tool for Quickstart Web Development</p>
-      </div>
+      <Router>
+        <div className={styles.App}>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/login" component={Login} />
+          <Switch>
+            <PrivateRoute exact path="/content" component={Content} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

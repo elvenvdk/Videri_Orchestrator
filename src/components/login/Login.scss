@@ -1,0 +1,76 @@
+.Login_Main {
+  height: 100vh;
+  background: url("../../img/svg/login-background.svg") no-repeat center center
+    fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  div.Login_Form_Container {
+    div.Login_Company_Logo {
+      display: flex;
+      margin-top: 4rem;
+
+      img {
+        height: 15px;
+        margin-right: 0.5rem;
+        margin-left: 5rem;
+      }
+    }
+    position: absolute;
+    margin: 0 auto;
+    top: 30%;
+    left: 35%;
+    width: 25rem;
+    height: 20rem;
+    background-color: rgb(255, 255, 255);
+
+    form.Login_Form {
+      position: absolute;
+      margin: 0 auto;
+      top: 40%;
+      left: 20%;
+      p {
+        position: absolute;
+        margin-right: auto;
+        top: -25px;
+      }
+      div.Login_Form_Input_Id {
+        input {
+          box-sizing: border-box;
+          width: 15rem;
+          height: 1.5rem;
+          margin-bottom: 7px;
+        }
+      }
+      div.Login_Form_Input_Password {
+        input {
+          box-sizing: border-box;
+          width: 15rem;
+          height: 1.5rem;
+          margin-bottom: 10px;
+        }
+      }
+      div.Login_Form_Submit {
+        input {
+          box-sizing: border-box;
+          // width: 100%;
+          padding: 0;
+          -webkit-appearance: none;
+          width: 5rem;
+          height: 1.5rem;
+          background-color: rgb(57, 230, 92);
+          margin-left: 67%;
+          &:active {
+            height: 1.3rem;
+            width: 4.8rem;
+          }
+          &:active,
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
