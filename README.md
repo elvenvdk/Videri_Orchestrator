@@ -11,3 +11,5 @@ Content page has a sub nav bar with 4 folders
 The first and second folders contain Pixabay images
 The third and fourth folders contain short vides sourced from Vimeo
 The searchbar and drag n drop are non-fuctional (at least at this time)
+
+Once cloned simply run yarn -
