@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import styles from "./Content.scss";
-import Navbarmain from "../nav/navbar-main/NavbarMain";
-import FolderNav from "../nav/folder-nav/FolderNav";
-import ContentList from "../content-list/ContentList";
-import ContentItem from "../content-item/ContentItem";
-import SearchStrip from "../search-strip/SearchStrip";
-import { selectContent } from "../../actions/contentActions";
+import styles from './Content.scss';
+import Navbarmain from '../nav/navbar-main/NavbarMain';
+import FolderNav from '../nav/folder-nav/FolderNav';
+import ContentList from '../content-list/ContentList';
+import ContentItem from '../content-item/ContentItem';
+import SearchStrip from '../search-strip/SearchStrip';
+import { selectContent } from '../../actions/contentActions';
 
 class Content extends Component {
   constructor(props) {

@@ -1,29 +1,29 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import styles from "./Login.scss";
-import VideriLogo from "../../img/svg/videri-login-logo.svg";
-import { loginUser } from "../../actions/authActions";
-import * as userValidation from "../../validations/is-valid";
+import styles from './Login.scss';
+import VideriLogo from '../../img/svg/videri-login-logo.svg';
+import { loginUser } from '../../actions/authActions';
+import * as userValidation from '../../validations/is-valid';
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
-      password: "",
-      idError: "",
-      passwordError: ""
+      id: '',
+      password: '',
+      idError: '',
+      passwordError: ''
     };
   }
 
   componentDidMount() {
-    if (this.props.auth.isAuthenticated) this.props.history.push("/content");
+    if (this.props.auth.isAuthenticated) this.props.history.push('/content');
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.auth.isAuthenticated) this.props.history.push("/content");
+    if (nextProps.auth.isAuthenticated) this.props.history.push('/content');
   }
 
   onInputChange = event => {
@@ -36,19 +36,11 @@ class Login extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    if (!userValidation.isIdValid(this.state.id)) {
-      this.setState({ idError: "Must enter a valid email" });
-    } else if (!userValidation.isPasswordValid(this.state.password)) {
-      this.setState({
-        passwordError: "Must enter a valid password"
-      });
-    } else {
-      const userData = {
-        id: this.state.id,
-        password: this.state.password
-      };
-      this.props.loginUser(userData);
-    }
+    const userData = {
+      id: this.state.id,
+      password: this.state.password
+    };
+    this.props.loginUser(userData);
   };
 
   render() {
@@ -56,7 +48,7 @@ class Login extends Component {
       <div className={styles.Login_Main}>
         <div className={styles.Login_Form_Container}>
           <div className={styles.Login_Company_Logo}>
-            <img src={VideriLogo} alt="Videri Logo" />
+            <img src={VideriLogo} alt='Videri Logo' />
             <p>ORCHESTRATOR</p>
           </div>
           <form onSubmit={this.onFormSubmit} className={styles.Login_Form}>
@@ -65,34 +57,34 @@ class Login extends Component {
               <input
                 onChange={this.onInputChange}
                 value={this.state.id}
-                type="text"
-                name="id"
-                placeholder="ID"
+                type='text'
+                name='id'
+                placeholder='ID'
               />
             </div>
             {this.state.idError.trim().length > 0 ? (
-              <div style={{ color: "red" }}>{this.state.idError}</div>
+              <div style={{ color: 'red' }}>{this.state.idError}</div>
             ) : null}
             <div className={styles.Login_Form_Input_Password}>
               <input
                 onChange={this.onInputChange}
                 value={this.state.password}
-                type="password"
-                name="password"
-                placeholder="PASSWORD"
+                type='password'
+                name='password'
+                placeholder='PASSWORD'
               />
             </div>
             {this.state.passwordError.trim().length > 0 ? (
-              <div style={{ color: "red", marginTop: "-2px" }}>
+              <div style={{ color: 'red', marginTop: '-2px' }}>
                 {this.state.passwordError}
               </div>
             ) : null}
             <div className={styles.Login_Form_Submit}>
-              <input type="submit" value="Sign In" />
+              <input type='submit' value='Sign In' />
             </div>
           </form>
           {this.state.passwordError.trim().length > 0 ? (
-            <div style={{ color: "red" }}>
+            <div style={{ color: 'red' }}>
               Password must contain at least 8 characters and a combination of
               lowercase, uppercase, number and a special character
             </div>
